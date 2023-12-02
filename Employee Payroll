@@ -1,0 +1,66 @@
+public class Employee {
+    int employeeId;
+    String employeeName, designation;
+
+    public Employee(int employeeId, String employeeName, String designation) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.designation = designation;
+    }
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+    public void display(){
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Employee Name: " + employeeName);
+        System.out.println("Employee designation: " + designation);
+    }
+}
+class HourlyEmployee extends Employee{
+
+    double hourlyRate, weeklyearnings;
+    int hoursWorked;
+
+    public int getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public void setHoursWorked(){
+        this.hoursWorked = hoursWorked;
+    }
+
+    public double getHourlyRate() {
+        return hourlyRate;
+    }
+
+    public void setHourlyRate(){
+        this.hourlyRate = hourlyRate;
+    }
+    public int Weeklyearnings() {
+        weeklyearnings = hourlyRate * hoursWorked;
+        System.out.println("Weekly Salary: " + weeklyearnings);
+
+
+    }
+}
+
