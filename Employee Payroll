@@ -1,4 +1,4 @@
-public class Employee {
+class Employee {
     int employeeId;
     String employeeName, designation;
 
@@ -7,6 +7,11 @@ public class Employee {
         this.employeeName = employeeName;
         this.designation = designation;
     }
+
+    public double calculateBonus(){
+        return (0.0);
+    }
+
     public int getEmployeeId() {
         return employeeId;
     }
@@ -37,30 +42,72 @@ public class Employee {
     }
 }
 class HourlyEmployee extends Employee{
-
     double hourlyRate, weeklyearnings;
     int hoursWorked;
+    public HourlyEmployee(int employeeId, String employeeName, String designation, double hourlyRate, double weeklyearnings, int hoursWorked) {
+        super(employeeId, employeeName, designation);
+    }
+
 
     public int getHoursWorked() {
+
         return hoursWorked;
     }
 
     public void setHoursWorked(){
+
         this.hoursWorked = hoursWorked;
     }
 
     public double getHourlyRate() {
+
         return hourlyRate;
     }
 
     public void setHourlyRate(){
+
         this.hourlyRate = hourlyRate;
     }
-    public int Weeklyearnings() {
+    public double Weekly() {
         weeklyearnings = hourlyRate * hoursWorked;
         System.out.println("Weekly Salary: " + weeklyearnings);
 
+        return weeklyearnings;
+    }
 
+}
+
+class SalariedEmployee extends Employee {
+
+    double monthlySalary, weeklysalary;
+    public SalariedEmployee(int employeeId, String employeeName, String designation, double monthlySalary, double weeklysalary) {
+        super(employeeId, employeeName, designation);
+    }
+
+    public double  SalariedEmployee(){
+        weeklysalary=monthlySalary/4;
+
+        return(weeklysalary);
+    }
+}
+
+class ExecutiveEmployee extends SalariedEmployee{
+
+    double bonusPercentage;
+    public ExecutiveEmployee(int employeeId, String employeeName, String designation,double monthlySalary, double weeklysalary) {
+        super(monthlySalary, weeklysalary);
+    }
+    public double calculateBonus(){
+        bonusPercentage=super.calculateBonus();
+        return (bonusPercentage);
+    }
+
+}
+public class Emp {
+    public static void main(String args[]) {
+        HourlyEmployee hourlyemp = new HourlyEmployee(1, "John Doe", "Intern", 15.0, 40, 10);
+        SalariedEmployee salariedemp = new SalariedEmployee(2, "Jane Smith", "Manager", 5000.0, 100);
+        ExecutiveEmployee executiveemp = new ExecutiveEmployee(3, "Alex Johnson", "Executive", 10000.0, 10.0);
     }
 }
 
