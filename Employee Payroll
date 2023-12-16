@@ -15,8 +15,8 @@ class Employee {
 
     }
     public double calculateBonus(){
-        bonus= monthlysalary*8/100;
-        return (bonus);
+
+        return(bonus);
     }
 
     public int getEmployeeId() {
@@ -109,7 +109,8 @@ class SalariedEmployee extends Employee {
     }
 
 
-    public SalariedEmployee(double monthlySalary, double weeklysalary) {
+    public SalariedEmployee(double monthlySalary, double weeklysalary)
+    {
         super();
     }
     public double SalariedEmployee(){
@@ -123,9 +124,13 @@ class SalariedEmployee extends Employee {
 class ExecutiveEmployee extends SalariedEmployee{
 
     double bonusPercentage;
+
     public ExecutiveEmployee(int employeeId, String employeeName, String designation,double monthlySalary, double weeklysalary) {
         super(monthlySalary, weeklysalary);
+        this.monthlySalary = monthlySalary;
+
     }
+
     public double calculateBonus(){
         bonus= monthlysalary*8/100;
         System.out.println("Employee bonus: " + bonus);
@@ -148,7 +153,7 @@ public class Emp {
         emp.display();
 
         hourlyemp.getHoursWorked();
-        hourlyemp.setHoursWorked(172);
+        hourlyemp.setHoursWorked(600);
         hourlyemp.getHourlyRate();
         hourlyemp.setHourlyRate(100);
 
@@ -156,6 +161,9 @@ public class Emp {
         salariedemp.setMonthlySalary(70000);
         hourlyemp.Weekly();
         salariedemp.SalariedEmployee();
+
+        executiveemp.getMonthlySalary();
+
         executiveemp.calculateBonus();
     }
 }
